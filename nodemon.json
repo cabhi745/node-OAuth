@@ -2,5 +2,5 @@
     "watch": ["."],
     "ext": ".ts,.js",
     "ignore": [],
-    "exec": "npx ts-node --esm route.ts"
+    "exec": "npx ts-node --esm --experimental-specifier-resolution=node route.ts"
   }
