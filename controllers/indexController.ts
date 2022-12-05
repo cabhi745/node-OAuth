@@ -11,3 +11,8 @@ export function indexController (req: Request, res: Response): void  {
     res.sendFile(path.join(__dirname, '..', 'ui', 'index.html'))
 }  
 
+export function secretsController (req: Request, res: Response): void {
+    res.json({
+        secret : 'Here is the auth protected page'
+    })
+}

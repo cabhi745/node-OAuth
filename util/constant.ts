@@ -1,7 +1,9 @@
+import { session } from "passport"
+
 export const PATH = {
     INDEX : '/',
     AUTH : '/auth',
-    SECRET : '/secret',
+    SECRET : '/secretPage',
     get AUTH_GOOGLE() {
         return `${this.AUTH}/google`
     },
@@ -19,11 +21,18 @@ export const strategyObject = {
     clientSecret : process.env.SECRET || ''
 }
 
-export const redirectLinksObject = {
+export const optionsForCallback = {
     failureRedirect : PATH.AUTH_FAILURE,
-    successRedirect : PATH.SECRET
+    successRedirect : PATH.SECRET,
+    session: true
 }
 
-export const scopeObject = {
+export const optionsForAuth = {
     scope : ['email', 'profile']
+}
+
+export const optionsForSession = {
+    name : 'session',
+    maxAge: 1000 * 60 * 60 * 24,
+    keys: ['secret1', 'secret2']
 }
